@@ -1,0 +1,5 @@
+venit = input('Enter your salary: ')
+necesitati = (50/100) * int(venit)
+scopuri_recreative = (30/100) * int(venit)
+datorii_si_economii = (20/100) * int(venit)
+print('Necesitati: ', necesitati, 'Scopuri recreative: ', scopuri_recreative, 'Datorii: ' , datorii_si_economii)
