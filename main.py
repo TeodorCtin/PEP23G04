@@ -1,1 +1,15 @@
-print('Hello World')
+print('---')
+print('| |')
+print('---')
+
+print('|----|')
+print('|    |')
+print('|----|')
+
+
+
+print('/', end = "")
+print('\\')
+print('--')
+
+print('()')
