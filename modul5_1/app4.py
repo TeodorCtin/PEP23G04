@@ -1,5 +1,4 @@
-import random
-import time
+import random, time
 
 list_of_numbers = []
 for i in range(1, 50):
