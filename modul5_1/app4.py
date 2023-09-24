@@ -1,10 +1,22 @@
 import random
+import time
 
 list_of_numbers = []
 for i in range(1, 50):
     list_of_numbers.append(i)
 
-server_choice = random.choices(list_of_numbers, k=6)
+server_choice = []
+while len(server_choice) < 6:
+    server_option = random.choice(list_of_numbers)
+    server_choice.append(server_option)
+    if server_option not in list_of_numbers:
+        server_option = random.choice(list_of_numbers)
+        server_choice.append(server_option)
+        continue
+    if server_option in server_choice:
+        continue
+
+    server_choice.append(server_option)
 
 user_choice = []
 while len(user_choice) < 6:
@@ -33,9 +45,6 @@ while len(user_choice) < 6:
 
     user_choice.append(option)
 
-print(server_choice)
-print(user_choice)
-
 list_of_correct_numbers_bulk = []
 list_of_correct_numbers_cut = []
 
@@ -50,6 +59,17 @@ def choices_comparison():
             continue
         else:
             list_of_correct_numbers_cut.append(c)
+
+    initial_time = 10
+
+    while initial_time >= 0:
+        print(initial_time)
+        initial_time -= 1
+        time.sleep(1)
+
+    print("Waiting is over")
+    print(server_choice)
+    print(user_choice)
 
     if len(list_of_correct_numbers_cut) in range(1, 4):
         print(f'Congratulations! You \' ve guessed {list_of_correct_numbers_cut} numbers. You won 50 lei.')
